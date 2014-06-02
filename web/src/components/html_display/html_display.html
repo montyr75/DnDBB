@@ -1,9 +1,36 @@
 <!-- Polymer Dart element that allows HTML to be inserted into the DOM via data binding -->
 
-<polymer-element name="unsafe-html-display">
+<polymer-element name="html-display">
+  <script type="application/dart">
+    library html_display;
+
+    import 'dart:html';
+    import 'package:polymer/polymer.dart';
+
+    @CustomTag('html-display')
+    class HtmlDisplay extends PolymerElement {
+      @published String content;
+
+      // non-visual initialization can be done here
+      HtmlDisplay.created() : super.created();
+
+      @override void enteredView() {
+        super.enteredView();
+      }
+
+      // respond to any change in the "content" attribute
+      void contentChanged(oldValue) {
+        if (content == null) {
+          content = "";
+        }
+
+        // creating a DocumentFragment allows for HTML parsing
+        $['content-container'].nodes..clear()..add(new DocumentFragment.html("$content"));
+      }
+    }
+  </script>
+
   <template>
     <span id="content-container"></span>
   </template>
-  
-  <script type="application/dart" src="html_display.dart"></script>
 </polymer-element>
