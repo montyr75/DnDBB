@@ -1,0 +1,49 @@
+<!-- Polymer Element HTML import links go here (above <polymer-element> tag) -->
+<link rel="import" href="../../components/html_display/html_display.html">
+
+<polymer-element name="output-view">
+
+  <template>
+    <link rel="stylesheet" href="../../../resources/css/app.css">
+
+    <style>
+      :host {
+        position: relative;
+      }
+
+      #msg-box {
+        position: absolute;
+        overflow: auto;
+        top: 0;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+      }
+
+      #clear-btn {
+        position: absolute;
+        bottom: 0;
+      }
+
+      .output-message {
+        border-bottom: 1px dotted #888888;
+        padding: 2px;
+      }
+    </style>
+
+    <div id="msg-box" class="well well-sm">
+      <ul class="list-group">
+        <template repeat="{{msg in messages}}">
+          <li class="list-group-item">
+            <unsafe-html-display content="{{msg}}"></unsafe-html-display>
+          </li>
+        </template>
+      </ul>
+    </div>
+
+    <button id="clear-btn" class="btn btn-default btn-sm" on-click="{{clear}}">Clear</button>
+  </template>
+
+  <script type="application/dart" src="output_view.dart"></script>
+</polymer-element>

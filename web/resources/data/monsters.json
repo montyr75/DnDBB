@@ -1,0 +1,61 @@
+[
+    {
+        "name": "Orc",
+        "size": "Medium",
+        "type": "Humanoid",
+        "subtype": "Orc",
+        "armorClass": 13,
+        "armor": "studded leather",
+        "hitPointsFormula": "2d8+2",
+        "hitPointsAverage": "11",
+        "immunities": "",
+        "initiativeModifier": 0,
+        "speed": "30 ft.",
+        "senses": "darkvision 60 ft.",
+        "alignment": "chaotic evil",
+        "languages": "Common, Orc",
+        "STR": 14,
+        "DEX": 10,
+        "CON": 12,
+        "INT": 7,
+        "WIS": 11,
+        "CHA": 10,
+        "traits": [
+            {
+                "name": "Relentless",
+                "description": "If an attack reduces the orc to 0 hit points or fewer but doesn't kill it outright, it is not knocked unconscious or killed as a result until the end of its next turn, provided it still has 0 hit points or fewer."
+            }
+        ],
+        "actions": [
+            {
+                "attackAction": true,
+                "name": "Melee Attack--Greataxe",
+                "description": "<p>+5 to hit (reach 5 ft.; one creature). <em>Hit:</em> 8 (1d12 + 2) slashing damage.</p>",
+                "toHit": 5,
+                "damage": [
+                    {
+                        "damageFormula": "1d12+2",
+                        "damageAverage": 8,
+                        "damageType": "slashing"
+                    }
+                ]
+            },
+            {
+                "attackAction": true,
+                "name": "Ranged Attack--Shortbow",
+                "description": "<p>+4 to hit (range 80 ft./320 ft.; one creature). <em>Hit:</em> 3 (1d6) piercing damage.</p>",
+                "toHit": 4,
+                "damage": [
+                    {
+                        "damageFormula": "1d6",
+                        "damageAverage": 3,
+                        "damageType": "piercing"
+                    }
+                ]
+            }
+        ],
+        "level": 3,
+        "XPValue": 70,
+        "description": ""
+    }
+]

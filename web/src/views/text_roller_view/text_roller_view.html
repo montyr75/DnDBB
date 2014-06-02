@@ -1,0 +1,16 @@
+<polymer-element name="text-roller-view">
+  <template>
+    <link rel="stylesheet" href="../../../resources/css/app.css">
+
+    <style>
+
+    </style>
+
+    <form class="form-inline" on-submit="{{submit}}">
+      <input type="text" class="form-control input-sm" value="{{textRoll}}" autocomplete="false" style="margin: 0; width: 150px" spellcheck="false">
+      <button class="btn btn-default btn-sm" on-click="{{roll}}">Roll</button>
+    </form>
+  </template>
+  
+  <script type="application/dart" src="text_roller_view.dart"></script>
+</polymer-element>

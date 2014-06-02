@@ -1,0 +1,106 @@
+<!-- Polymer Element HTML import links go here (above <polymer-element> tag) -->
+<link rel="import" href="../roller_view/roller_view.html">
+<link rel="import" href="../text_roller_view/text_roller_view.html">
+<link rel="import" href="../output_view/output_view.html">
+
+<polymer-element name="main-view">
+  <template>
+    <link rel="stylesheet" href="../../../resources/css/app.css">
+
+    <style>
+      :host {
+        margin: 0 10px;
+      }
+
+      #app-title {
+        font-family: 'Noto Serif', serif;
+        font-style: italic;
+      }
+
+      .panel {
+        position: relative;
+        background-color: rgba(34, 34, 34, 0.7);
+      }
+
+      .navbar-nav > li > a {
+        padding: 3px 7px 3px 7px;
+        cursor: default;
+        color: white;
+      }
+
+      .left-panel {
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+      }
+
+      .right-panel {
+        width: 275px;
+        margin-left: 10px;
+      }
+
+      .right-panel .panel-body {
+        position: absolute;
+        top: 2.75em;
+        bottom: 0;
+        right: .5em;
+        left: 0;
+      }
+
+      .roller-box {
+        width: 375px;
+        min-height: 315px;
+      }
+
+      .panel-heading {
+        color: white;
+      }
+    </style>
+
+    <header>
+      <h3 id="app-title">Fantasy Battle Buddy</h3>
+    </header>
+
+    <div class="flexbox-row-nowrap flex-justify-space-between flex1">
+      <div class="panel panel-default flex1">
+        <div class="panel-heading" style="height: 41px;">
+          <ul class="nav navbar-nav">
+            <li class="active"><a on-click="{{changeView}}" data-view="DICE_VIEW">Dice</a></li>
+            <li><a on-click="{{changeView}}" data-view="MONSTERS_VIEW">Monsters</a></li>
+          </ul>
+        </div>
+
+        <div class="panel-body">
+          <template if="{{currentView == 'DICE_VIEW'}}">
+            <div id="dice_view" class="roller-box well well-sm flexbox-column-nowrap flex-justify-space-between">
+              <h4 style="margin-top: 0px;">DICE</h4>
+
+              <template repeat="{{r in rollers}}">
+                <roller-view class="roller" sides="{{r}}"></roller-view>
+              </template>
+
+              <text-roller-view style="padding-top: 5px;"></text-roller-view>
+            </div>
+          </template>
+
+          <template if="{{currentView == 'MONSTERS_VIEW'}}">
+            <div id="monsters_view" class="monster-box">
+              <h4>MONSTERS</h4>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <div class="panel panel-default right-panel">
+        <div class="panel-heading">
+          Output
+        </div>
+
+        <div class="panel-body flexbox-row-nowrap">
+          <output-view class="flex1"></output-view>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script type="application/dart" src="main_view.dart"></script>
+</polymer-element>
