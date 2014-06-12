@@ -12,9 +12,9 @@ class TextRollerView extends PolymerElement {
 
   TextRollerView.created() : super.created();
 
-  void enteredView() {
-    super.enteredView();
-    print("TextRollerView()::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("TextRollerView()::attached()");
   }
 
   void roll(Event e, var detail, Element target) {

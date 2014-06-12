@@ -25,9 +25,9 @@ class RollerView extends PolymerElement {
 
   RollerView.created() : super.created();
 
-  void enteredView() {
-    super.enteredView();
-    //print("RollerView::enteredView()");
+  @override void attached() {
+    super.attached();
+    //print("RollerView::attached()");
 
     // roller is not properly filled until this point (at DOM insertion)
     dieImgPath = "${DIE_IMAGE_PATH}/d${sides}.png";

@@ -23,9 +23,9 @@ class MainView extends PolymerElement {
 
   MainView.created() : super.created();
 
-  void enteredView() {
-    super.enteredView();
-    print("MainView::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("MainView::attached()");
   }
 
   void changeView(Event e, var detail, Element target) {

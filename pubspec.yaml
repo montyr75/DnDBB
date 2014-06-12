@@ -2,7 +2,7 @@ name: DnDBB
 description: Battle Buddy
 dependencies:
   event_bus: any
-  polymer: '>=0.10.0'
+  polymer: any
 transformers:
 - polymer:
     entry_points: web/index.html

@@ -14,9 +14,9 @@ class OutputView extends PolymerElement {
 
   OutputView.created() : super.created();
 
-  @override void enteredView() {
-    super.enteredView();
-    print("OutputView::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("OutputView::attached()");
 
     // listen for outputMessageEvents
     outputMessageEventSub = events.eventBus.on(events.outputMessageEvent).listen(addMsg);
