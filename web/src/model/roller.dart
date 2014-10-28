@@ -2,13 +2,15 @@ library roller;
 
 import "dart:math" as Math;
 
+Math.Random _random = new Math.Random(new DateTime.now().millisecondsSinceEpoch);
+
 class Roller {
   static const String ERROR = "Roll Error";
 
   Roller();
 
   static int rollDie(int sides) {
-    return new Math.Random().nextInt(sides) + 1;
+    return _random.nextInt(sides) + 1;
   }
 
   static String roll(int qty, int sides, int mod, {bool htmlOutput: true}) {
